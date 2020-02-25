@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import pic02 from '../assets/images/pic02.jpg';
 import pic03 from '../assets/images/pic03.jpg';
@@ -26,8 +27,9 @@ class Resources extends Component {
 							</p>
 							<ul className='actions'>
 								<li>
-									<a href='#' className='button'>
-										Go to League Home
+									<a href='https://fantasy.espn.com/football/league?leagueId=23879'
+									   className='button'>
+									   Go to League Home
 									</a>
 								</li>
 							</ul>
@@ -43,9 +45,9 @@ class Resources extends Component {
 							</p>
 							<ul className='actions'>
 								<li>
-									<a href='/history' className='button'>
+									<Link className='button' to='/history'>
 										League History
-									</a>
+									</Link>
 								</li>
 							</ul>
 						</div>

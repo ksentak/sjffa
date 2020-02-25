@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../assets/scss/main.scss';
 
 import Header from '../components/Header';
 import Announcements from '../components/Announcements';
