@@ -6,6 +6,7 @@ class Standings extends Component {
 	componentDidMount() {
 		API.getAllData()
 			.then(res => {
+				// console.log(res);
 				let teams = [];
 
 				for (let i = 0; i < res.teams.length; i++) {
