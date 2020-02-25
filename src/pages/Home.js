@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import '../assets/scss/main.scss';
 
 import Header from '../components/Header';
+import Announcements from '../components/Announcements';
+import Standings from '../components/Standings';
+import Resources from '../components/Resources';
 import Footer from '../components/Footer';
 
 class Home extends Component {
@@ -9,6 +12,9 @@ class Home extends Component {
 		return (
 			<div className='Home'>
 				<Header />
+				<Announcements />
+				<Standings />
+				<Resources />
 				<Footer />
 			</div>
 		);
