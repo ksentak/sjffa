@@ -8,36 +8,42 @@ let tail =
 	'?view=mDraftDetail&view=mLiveScoring&view=mMatchupScore&view=mPendingTransactions&view=mPositionalRatings&view=mSettings&view=mTeam&view=modular&view=mNav&view=mMatchupScore';
 let siteURL = base + year + mid + leagueID + tail;
 
-axios
-	.get(siteURL)
-	.then(function(res) {
-		// handle success
-		// console.log(res.data)
+export default {
+	getAllData: function() {
+		return axios.get(siteURL).then(res => res.data);
+	},
+};
 
-		let teams = [];
+// axios
+// 	.get(siteURL)
+// 	.then(function(res) {
+// 		// handle success
+// 		// console.log(res.data)
 
-		for (let i = 0; i < res.data.teams.length; i++) {
-			let teamName = res.data.teams[i].location + ' ' + res.data.teams[i].nickname;
-			let teamWins = res.data.teams[i].record.overall.wins;
-			let teamLosses = res.data.teams[i].record.overall.losses;
-			let teamRecord = teamWins + '-' + teamLosses;
-			let pointsExact = res.data.teams[i].points;
-			let teamPoints = pointsExact.toFixed(2);
+// 		let teams = [];
 
-			let addTeam = {
-				name: teamName,
-				wins: teamWins,
-				losses: teamLosses,
-				record: teamRecord,
-				points: teamPoints,
-			};
+// 		for (let i = 0; i < res.data.teams.length; i++) {
+// 			let teamName = res.data.teams[i].location + ' ' + res.data.teams[i].nickname;
+// 			let teamWins = res.data.teams[i].record.overall.wins;
+// 			let teamLosses = res.data.teams[i].record.overall.losses;
+// 			let teamRecord = teamWins + '-' + teamLosses;
+// 			let pointsExact = res.data.teams[i].points;
+// 			let teamPoints = pointsExact.toFixed(2);
 
-			teams.push(addTeam);
-		}
+// 			let addTeam = {
+// 				name: teamName,
+// 				wins: teamWins,
+// 				losses: teamLosses,
+// 				record: teamRecord,
+// 				points: teamPoints,
+// 			};
 
-		console.log(teams);
-	})
-	.catch(function(err) {
-		// handle error
-		console.log(err);
-	});
+// 			teams.push(addTeam);
+// 		}
+
+// 		console.log(teams);
+// 	})
+// 	.catch(function(err) {
+// 		// handle error
+// 		console.log(err);
+// 	});

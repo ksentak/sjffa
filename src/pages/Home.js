@@ -6,8 +6,6 @@ import Standings from '../components/Standings';
 import Resources from '../components/Resources';
 import Footer from '../components/Footer';
 
-import API from '../utils/API';
-
 class Home extends Component {
 	render() {
 		return (

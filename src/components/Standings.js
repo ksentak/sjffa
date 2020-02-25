@@ -1,6 +1,40 @@
 import React, { Component } from 'react';
 
+import API from '../utils/API';
+
 class Standings extends Component {
+	componentDidMount() {
+		API.getAllData()
+			.then(res => {
+				let teams = [];
+
+				for (let i = 0; i < res.teams.length; i++) {
+					let teamName = res.teams[i].location + ' ' + res.teams[i].nickname;
+					let teamWins = res.teams[i].record.overall.wins;
+					let teamLosses = res.teams[i].record.overall.losses;
+					let teamRecord = teamWins + '-' + teamLosses;
+					let pointsExact = res.teams[i].points;
+					let teamPoints = pointsExact.toFixed(2);
+
+					let addTeam = {
+						name: teamName,
+						wins: teamWins,
+						losses: teamLosses,
+						record: teamRecord,
+						points: teamPoints,
+					};
+
+					teams.push(addTeam);
+				}
+
+				console.log(teams);
+			})
+			.catch(function(err) {
+				// handle error
+				console.log(err);
+			});
+	}
+
 	render() {
 		return (
 			<div className='standings-div'>
