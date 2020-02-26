@@ -1,17 +1,18 @@
 /* Navbar */
 
-.navbar-ul {
+.sitemap-ul {
 	margin-top: 0;
-	float: left;
+	text-align: center;
 }
 
-.navbar-li {
+.sitemap-li {
+	display: inline;
 	list-style-type: none;
 	color: white;
 	text-decoration: none;
 }
 
-.navbar-li:hover {
+.sitemap-li:hover {
 	text-decoration: underline;
 	color: white;
 }

@@ -1,23 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/css/navbar.css';
+import '../../assets/css/sitemap.css';
 
-class Navbar extends Component {
+class Sitemap extends Component {
 	render() {
 		return (
-			<div className='navbar-div'>
-				<section id='nav' className='navbar'>
+			<div className='sitemap-div'>
+				<section id='map' className='sitemap'>
 					<div className='grid-wrapper'>
-						{/* <div className='col-12'> */}
-							<ul className='navbar-ul'>
-								<li className='navbar-li'>
+						<div className='col-12'>
+							<ul className='sitemap-ul'>
+								<li className='sitemap-li'>
 									<Link to='/'>Home</Link>
 								</li>
-								<li className='navbar-li'>
+								<li className='sitemap-li'>
+									<Link to='/history'>History</Link>
+								</li>
+								<li className='sitemap-li'>
+									<Link to='/about'>About</Link>
+								</li>
+								<li className='sitemap-li'>
 									<Link to='/history'>History</Link>
 								</li>
 							</ul>
-						{/* </div> */}
+						</div>
 					</div>
 				</section>
 			</div>
@@ -25,4 +31,4 @@ class Navbar extends Component {
 	}
 }
 
-export default Navbar;
+export default Sitemap;
