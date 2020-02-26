@@ -13,37 +13,3 @@ export default {
 		return axios.get(siteURL).then(res => res.data);
 	},
 };
-
-// axios
-// 	.get(siteURL)
-// 	.then(function(res) {
-// 		// handle success
-// 		// console.log(res.data)
-
-// 		let teams = [];
-
-// 		for (let i = 0; i < res.data.teams.length; i++) {
-// 			let teamName = res.data.teams[i].location + ' ' + res.data.teams[i].nickname;
-// 			let teamWins = res.data.teams[i].record.overall.wins;
-// 			let teamLosses = res.data.teams[i].record.overall.losses;
-// 			let teamRecord = teamWins + '-' + teamLosses;
-// 			let pointsExact = res.data.teams[i].points;
-// 			let teamPoints = pointsExact.toFixed(2);
-
-// 			let addTeam = {
-// 				name: teamName,
-// 				wins: teamWins,
-// 				losses: teamLosses,
-// 				record: teamRecord,
-// 				points: teamPoints,
-// 			};
-
-// 			teams.push(addTeam);
-// 		}
-
-// 		console.log(teams);
-// 	})
-// 	.catch(function(err) {
-// 		// handle error
-// 		console.log(err);
-// 	});

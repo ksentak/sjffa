@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import API from '../../utils/API16';
 
+import Sixteen from '../../assets/images/2016.png';
+
 class OneSix extends Component {
 	componentDidMount() {
 		API.getAllDataOneSix()
@@ -16,7 +18,27 @@ class OneSix extends Component {
 	render() {
 		return (
 			<div className='one-six-div'>
-				<h1>Hello Test</h1>
+				<section id='one' className='main style1'>
+					<div className='grid-wrapper'>
+						<div className='col-6'>
+							<header className='major'>
+								<h2>2016 Season</h2>
+							</header>
+							<p className='announcementText'>
+								Congrats to Harry for winning the 2019 SJFFA Championship! He is
+								now the first owner to have won multiple championships in the
+								SJFFA. I hope everyone enjoys the long offseason and I hope you
+								are excited as I am for the start up of the 2020 season which
+								will begin with the draft in August.
+							</p>
+						</div>
+						<div className='col-6'>
+							<span className='image fit'>
+								<img src={Sixteen} alt='2016 results' />
+							</span>
+						</div>
+					</div>
+				</section>
 			</div>
 		);
 	}

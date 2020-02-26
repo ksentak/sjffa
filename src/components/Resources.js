@@ -27,9 +27,13 @@ class Resources extends Component {
 							</p>
 							<ul className='actions'>
 								<li>
-									<a href='https://fantasy.espn.com/football/league?leagueId=23879'
-									   className='button'>
-									   Go to League Home
+									<a
+										href='https://fantasy.espn.com/football/league?leagueId=23879'
+										className='button'
+										target='_blank'
+										rel='noopener noreferrer'
+									>
+										Go to League Home
 									</a>
 								</li>
 							</ul>
