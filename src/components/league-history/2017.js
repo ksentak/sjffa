@@ -18,7 +18,7 @@ class OneSeven extends Component {
 	render() {
 		return (
 			<div className='one-seven-div'>
-				<section id='one' className='main style1'>
+				<section className='main style1'>
 					<div className='grid-wrapper'>
 						<div className='col-6'>
 							<header className='major'>

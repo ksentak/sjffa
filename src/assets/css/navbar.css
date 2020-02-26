@@ -1,0 +1,17 @@
+/* Navbar */
+
+.navbar-ul {
+	margin-top: 0;
+	float: left;
+}
+
+.navbar-li {
+	list-style-type: none;
+	color: white;
+	text-decoration: none;
+}
+
+.navbar-li:hover {
+	text-decoration: underline;
+	color: white;
+}
