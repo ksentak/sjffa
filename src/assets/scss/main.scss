@@ -950,7 +950,7 @@
 		/* Footer */
 
 			#footer {
-				@include padding(4em, 0, (0,0,_size(element-margin),0));
+				@include padding(2em, 0, (0,0,_size(element-margin),0));
 				background-attachment: scroll;
 			}
 

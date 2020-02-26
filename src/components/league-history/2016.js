@@ -4,10 +4,27 @@ import API from '../../utils/API16';
 import Sixteen from '../../assets/images/2016.png';
 
 class OneSix extends Component {
+	state = {
+		first: '',
+		second: '',
+		third: '',
+	};
+
 	componentDidMount() {
 		API.getAllDataOneSix()
 			.then(res => {
-				console.log(res);
+				let firstPlace =
+					res[0].teams[8].location + ' ' + res[0].teams[8].nickname;
+				let secondPlace =
+					res[0].teams[3].location + ' ' + res[0].teams[3].nickname;
+				let thirdPlace =
+					res[0].teams[0].location + ' ' + res[0].teams[0].nickname;
+
+				this.setState({
+					first: firstPlace,
+					second: secondPlace,
+					third: thirdPlace,
+				});
 			})
 			.catch(function(err) {
 				// handle error
@@ -25,11 +42,9 @@ class OneSix extends Component {
 								<h2>2016 Season</h2>
 							</header>
 							<p className='announcementText'>
-								Congrats to Harry for winning the 2019 SJFFA Championship! He is
-								now the first owner to have won multiple championships in the
-								SJFFA. I hope everyone enjoys the long offseason and I hope you
-								are excited as I am for the start up of the 2020 season which
-								will begin with the draft in August.
+								<span>1st place: {this.state.first}</span> <br />
+								<span>2nd place: {this.state.second}</span> <br />
+								<span>3rd place: {this.state.third}</span> <br />
 							</p>
 						</div>
 						<div className='col-6'>

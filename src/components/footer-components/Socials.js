@@ -11,17 +11,17 @@ class Socials extends Component {
 							<ul className='socials-ul'>
 								<li className='socials-li'>
 									<a href='https://fantasy.espn.com/football/league?leagueId=23879'>
-										<i class="fas fa-football-ball"></i>
+										<i className="fas fa-football-ball"></i>
 									</a>
 								</li>
 								<li className='socials-li'>
 									<a href='https://sportsbook.draftkings.com/'>
-										<i class="fas fa-crown"></i>									
+										<i className="fas fa-crown"></i>									
 									</a>
 								</li>
 								<li className='socials-li'>
 									<a href='https://sportsbook.fanduel.com/sports'>
-										<i class="fas fa-shield-alt"></i>									
+										<i className="fas fa-shield-alt"></i>									
 									</a>
 								</li>
 							</ul>

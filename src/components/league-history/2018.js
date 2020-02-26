@@ -4,10 +4,27 @@ import API from '../../utils/API18';
 import Eighteen from '../../assets/images/2018.png';
 
 class OneEight extends Component {
+	state = {
+		first: '',
+		second: '',
+		third: '',
+	};
+
 	componentDidMount() {
 		API.getAllDataOneEight()
 			.then(res => {
-				console.log(res);
+				let firstPlace =
+					res[0].teams[2].location + ' ' + res[0].teams[2].nickname;
+				let secondPlace =
+					res[0].teams[7].location + ' ' + res[0].teams[7].nickname;
+				let thirdPlace =
+					res[0].teams[5].location + ' ' + res[0].teams[5].nickname;
+
+				this.setState({
+					first: firstPlace,
+					second: secondPlace,
+					third: thirdPlace,
+				});
 			})
 			.catch(function(err) {
 				// handle error
@@ -25,11 +42,9 @@ class OneEight extends Component {
 								<h2>2018 Season</h2>
 							</header>
 							<p className='announcementText'>
-								Congrats to Harry for winning the 2019 SJFFA Championship! He is
-								now the first owner to have won multiple championships in the
-								SJFFA. I hope everyone enjoys the long offseason and I hope you
-								are excited as I am for the start up of the 2020 season which
-								will begin with the draft in August.
+								<span>1st place: {this.state.first}</span> <br />
+								<span>2nd place: {this.state.second}</span> <br />
+								<span>3rd place: {this.state.third}</span> <br />
 							</p>
 						</div>
 						<div className='col-6'>
