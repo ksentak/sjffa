@@ -1,19 +1,19 @@
-/* Sitemap */
+/* Social Media */
 
-.sitemap-ul {
+.socials-ul {
 	margin-top: 0;
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 0;
 }
 
-.sitemap-li {
+.socials-li {
 	display: inline;
 	list-style-type: none;
 	color: white;
 	text-decoration: none;
 }
 
-.sitemap-li:hover {
+.socials-li:hover {
 	text-decoration: underline;
 	color: white;
 }
