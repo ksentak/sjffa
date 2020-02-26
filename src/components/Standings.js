@@ -42,7 +42,8 @@ class Standings extends Component {
 				<section id='two' className='main style2'>
 					<div className='grid-wrapper'>
 						<div className='col-6'>
-							<ul className='major-icons'>
+							<h2>This is where I will put important data from API</h2>
+							{/* <ul className='major-icons'>
 								<li>
 									<span className='icon style1 major fa-code'></span>
 								</li>
@@ -61,7 +62,7 @@ class Standings extends Component {
 								<li>
 									<span className='icon style6 major fa-calendar'></span>
 								</li>
-							</ul>
+							</ul> */}
 						</div>
 						<div className='col-6'>
 							<header className='major'>
