@@ -5,7 +5,6 @@ import Announcements from '../components/Announcements';
 import Standings from '../components/Standings';
 import Resources from '../components/Resources';
 import Footer from '../components/Footer';
-// import Navbar from '../components/Navbar';
 
 class Home extends Component {
 	render() {
@@ -15,7 +14,6 @@ class Home extends Component {
 				<Announcements />
 				<Standings />
 				<Resources />
-				{/* <Navbar /> */}
 				<Footer />
 			</div>
 		);
