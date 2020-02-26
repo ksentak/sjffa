@@ -1,6 +1,7 @@
 import React from 'react';
 import Sitemap from '../components/footer-components/Sitemap';
 import Socials from '../components/footer-components/Socials';
+import Copyright from '../components/footer-components/Copyright';
 
 class Footer extends React.Component {
 	render() {
@@ -8,9 +9,7 @@ class Footer extends React.Component {
 			<section id='footer'>
 				<Sitemap />
 				<Socials />
-				<ul className='copyright'>
-					<li>KJS &copy; 2020</li>
-				</ul>
+				<Copyright />
 			</section>
 		);
 	}

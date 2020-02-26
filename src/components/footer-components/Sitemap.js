@@ -16,12 +16,6 @@ class Sitemap extends Component {
 								<li className='sitemap-li'>
 									<Link to='/history'>History</Link>
 								</li>
-								<li className='sitemap-li'>
-									<Link to='/about'>About</Link>
-								</li>
-								<li className='sitemap-li'>
-									<Link to='/history'>History</Link>
-								</li>
 							</ul>
 						</div>
 					</div>
