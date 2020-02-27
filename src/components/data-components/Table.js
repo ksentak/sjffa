@@ -72,104 +72,105 @@ class DataTable extends Component {
 					teamEight: team8,
 					teamNine: team9,
 				});
+
+				function createData(name, record, points, wins, losses) {
+					return { name, record, points, wins, losses };
+				}
+		
+				const rowsState = [
+					// Team 0
+					createData(
+						this.state.teamZero.name,
+						this.state.teamZero.record,
+						this.state.teamZero.points,
+						this.state.teamZero.wins,
+						this.state.teamZero.losses,
+					),
+					// Team 1
+					createData(
+						this.state.teamOne.name,
+						this.state.teamOne.record,
+						this.state.teamOne.points,
+						this.state.teamOne.wins,
+						this.state.teamOne.losses,
+					),
+					// Team 2
+					createData(
+						this.state.teamTwo.name,
+						this.state.teamTwo.record,
+						this.state.teamTwo.points,
+						this.state.teamTwo.wins,
+						this.state.teamTwo.losses,
+					),
+					// Team 3
+					createData(
+						this.state.teamThree.name,
+						this.state.teamThree.record,
+						this.state.teamThree.points,
+						this.state.teamThree.wins,
+						this.state.teamThree.losses,
+					),
+					// Team 4
+					createData(
+						this.state.teamFour.name,
+						this.state.teamFour.record,
+						this.state.teamFour.points,
+						this.state.teamFour.wins,
+						this.state.teamFour.losses,
+					),
+					// Team 5
+					createData(
+						this.state.teamFive.name,
+						this.state.teamFive.record,
+						this.state.teamFive.points,
+						this.state.teamFive.wins,
+						this.state.teamFive.losses,
+					),
+					// Team 6
+					createData(
+						this.state.teamSix.name,
+						this.state.teamSix.record,
+						this.state.teamSix.points,
+						this.state.teamSix.wins,
+						this.state.teamSix.losses,
+					),
+					// Team 7
+					createData(
+						this.state.teamSeven.name,
+						this.state.teamSeven.record,
+						this.state.teamSeven.points,
+						this.state.teamSeven.wins,
+						this.state.teamSeven.losses,
+					),
+					// Team 8
+					createData(
+						this.state.teamEight.name,
+						this.state.teamEight.record,
+						this.state.teamEight.points,
+						this.state.teamEight.wins,
+						this.state.teamEight.losses,
+					),
+					// Team 9
+					createData(
+						this.state.teamNine.name,
+						this.state.teamNine.record,
+						this.state.teamNine.points,
+						this.state.teamNine.wins,
+						this.state.teamNine.losses,
+					),
+				];
+		
+				this.setState({
+					rows: rowsState,
+				});
+		
+				console.log(this.state.rows)
+
 			})
 			.catch(function(err) {
 				// Handle Error
 				console.log(err);
 			});
-
-		function createData(name, record, points, wins, loses) {
-			return { name, record, points, wins, loses };
-		}
-
-		const rowsState = [
-			// Team 0
-			createData(
-				this.state.teamZero.record,
-				this.state.teamZero.record,
-				this.state.teamZero.points,
-				this.state.teamZero.wins,
-				this.state.teamZero.loses,
-			),
-			// Team 1
-			createData(
-				this.state.teamOne.record,
-				this.state.teamOne.record,
-				this.state.teamOne.points,
-				this.state.teamOne.wins,
-				this.state.teamOne.loses,
-			),
-			// Team 2
-			createData(
-				this.state.teamTwo.record,
-				this.state.teamTwo.record,
-				this.state.teamTwo.points,
-				this.state.teamTwo.wins,
-				this.state.teamTwo.loses,
-			),
-			// Team 3
-			createData(
-				this.state.teamThree.record,
-				this.state.teamThree.record,
-				this.state.teamThree.points,
-				this.state.teamThree.wins,
-				this.state.teamThree.loses,
-			),
-			// Team 4
-			createData(
-				this.state.teamFour.record,
-				this.state.teamFour.record,
-				this.state.teamFour.points,
-				this.state.teamFour.wins,
-				this.state.teamFour.loses,
-			),
-			// Team 5
-			createData(
-				this.state.teamFive.record,
-				this.state.teamFive.record,
-				this.state.teamFive.points,
-				this.state.teamFive.wins,
-				this.state.teamFive.loses,
-			),
-			// Team 6
-			createData(
-				this.state.teamSix.record,
-				this.state.teamSix.record,
-				this.state.teamSix.points,
-				this.state.teamSix.wins,
-				this.state.teamSix.loses,
-			),
-			// Team 7
-			createData(
-				this.state.teamSeven.record,
-				this.state.teamSeven.record,
-				this.state.teamSeven.points,
-				this.state.teamSeven.wins,
-				this.state.teamSeven.loses,
-			),
-			// Team 8
-			createData(
-				this.state.teamEight.record,
-				this.state.teamEight.record,
-				this.state.teamEight.points,
-				this.state.teamEight.wins,
-				this.state.teamEight.loses,
-			),
-			// Team 9
-			createData(
-				this.state.teamNine.record,
-				this.state.teamNine.record,
-				this.state.teamNine.points,
-				this.state.teamNine.wins,
-				this.state.teamNine.loses,
-			),
-		];
-
-		this.setState({
-			rows: rowsState,
-		});
-
-		
 
 		// function descendingComparator(a, b, orderBy) {
 		// 	if (b[orderBy] < a[orderBy]) {
@@ -230,14 +231,14 @@ class DataTable extends Component {
 	render() {
 		return (
 			<TableContainer component={Paper}>
-				<Table className='newTable' aria-label='simple table'>
+				<Table className='recordTable' aria-label='simple table'>
 					<TableHead>
 						<TableRow>
-							<TableCell>Team Name</TableCell>
-							<TableCell align='right'>Record</TableCell>
-							<TableCell align='right'>Points Scored</TableCell>
-							<TableCell align='right'>Wins</TableCell>
-							<TableCell align='right'>Loses</TableCell>
+							<TableCell align='center'>Team Name</TableCell>
+							<TableCell align='center'>Record</TableCell>
+							<TableCell align='center'>Points Scored</TableCell>
+							<TableCell align='center'>Wins</TableCell>
+							<TableCell align='center'>Losses</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -246,10 +247,10 @@ class DataTable extends Component {
 								<TableCell component='th' scope='row'>
 									{row.name}
 								</TableCell>
-								<TableCell align='right'>{row.record}</TableCell>
-								<TableCell align='right'>{row.points}</TableCell>
-								<TableCell align='right'>{row.wins}</TableCell>
-								<TableCell align='right'>{row.loses}</TableCell>
+								<TableCell align='center'>{row.record}</TableCell>
+								<TableCell align='center'>{row.points}</TableCell>
+								<TableCell align='center'>{row.wins}</TableCell>
+								<TableCell align='center'>{row.losses}</TableCell>
 							</TableRow>
 						))}
 					</TableBody>

@@ -10,7 +10,6 @@ class Standings extends Component {
 				<section id='two' className='main style2'>
 					<div className='grid-wrapper'>
 						<div className='col-6'>
-							<h2>This is where I will put important data from API</h2>
 							<DataTable/>
 						</div>
 						<div className='col-6'>
