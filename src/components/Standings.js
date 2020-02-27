@@ -1,40 +1,8 @@
 import React, { Component } from 'react';
 
-import API from '../utils/API';
+import DataTable from './data-components/Table';
 
 class Standings extends Component {
-	componentDidMount() {
-		API.getAllData()
-			.then(res => {
-				// console.log(res);
-				let teams = [];
-
-				for (let i = 0; i < res.teams.length; i++) {
-					let teamName = res.teams[i].location + ' ' + res.teams[i].nickname;
-					let teamWins = res.teams[i].record.overall.wins;
-					let teamLosses = res.teams[i].record.overall.losses;
-					let teamRecord = teamWins + '-' + teamLosses;
-					let pointsExact = res.teams[i].points;
-					let teamPoints = pointsExact.toFixed(2);
-
-					let addTeam = {
-						name: teamName,
-						wins: teamWins,
-						losses: teamLosses,
-						record: teamRecord,
-						points: teamPoints,
-					};
-
-					teams.push(addTeam);
-				}
-
-				console.log(teams);
-			})
-			.catch(function(err) {
-				// handle error
-				console.log(err);
-			});
-	}
 
 	render() {
 		return (
@@ -43,26 +11,7 @@ class Standings extends Component {
 					<div className='grid-wrapper'>
 						<div className='col-6'>
 							<h2>This is where I will put important data from API</h2>
-							{/* <ul className='major-icons'>
-								<li>
-									<span className='icon style1 major fa-code'></span>
-								</li>
-								<li>
-									<span className='icon style2 major fa-bolt'></span>
-								</li>
-								<li>
-									<span className='icon style3 major fa-camera-retro'></span>
-								</li>
-								<li>
-									<span className='icon style4 major fa-cog'></span>
-								</li>
-								<li>
-									<span className='icon style5 major fa-desktop'></span>
-								</li>
-								<li>
-									<span className='icon style6 major fa-calendar'></span>
-								</li>
-							</ul> */}
+							<DataTable/>
 						</div>
 						<div className='col-6'>
 							<header className='major'>
