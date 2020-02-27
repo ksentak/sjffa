@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -9,14 +9,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 import API from '../../utils/API';
-
-
-const useStyles = makeStyles({
-	table: {
-		minWidth: 650,
-	},
-});
-
 
 class DataTable extends Component {
 	state = {
@@ -30,6 +22,7 @@ class DataTable extends Component {
 		teamSeven: '',
 		teamEight: '',
 		teamNine: '',
+		rows: [],
 	};
 
 	componentDidMount() {
@@ -89,7 +82,7 @@ class DataTable extends Component {
 			return { name, record, points, wins, loses };
 		}
 
-		const rows = [
+		const rowsState = [
 			// Team 0
 			createData(
 				this.state.teamZero.record,
@@ -172,6 +165,12 @@ class DataTable extends Component {
 			),
 		];
 
+		this.setState({
+			rows: rowsState,
+		});
+
+		
+
 		// function descendingComparator(a, b, orderBy) {
 		// 	if (b[orderBy] < a[orderBy]) {
 		// 		return -1;
@@ -229,10 +228,9 @@ class DataTable extends Component {
 	}
 
 	render() {
-		const classes = useStyles();
 		return (
 			<TableContainer component={Paper}>
-				<Table className={classes.table} aria-label='simple table'>
+				<Table className='newTable' aria-label='simple table'>
 					<TableHead>
 						<TableRow>
 							<TableCell>Team Name</TableCell>
@@ -243,7 +241,7 @@ class DataTable extends Component {
 						</TableRow>
 					</TableHead>
 					<TableBody>
-						{rows.map(row => (
+						{this.state.rows.map(row => (
 							<TableRow key={row.name}>
 								<TableCell component='th' scope='row'>
 									{row.name}
